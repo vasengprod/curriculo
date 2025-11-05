@@ -1,6 +1,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+import '@/app/globals.css';
+import { GluestackUIProvider } from '@/components/ui/gluestack-ui-provider';
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -22,8 +25,10 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
-      </body>
+        <GluestackUIProvider mode="dark">
+            {children}
+          </GluestackUIProvider>
+        </body>
     </html>
   );
 }
