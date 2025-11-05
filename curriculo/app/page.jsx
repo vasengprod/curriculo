@@ -79,7 +79,6 @@ const App = () => {
       try {
         const githubRepos = await fetchWithBackoff(API_URL);
 
-        // Mapeia os dados do GitHub para a estrutura de projetos esperada
         const processedProjects = githubRepos.map(repo => ({
             name: repo.name,
             description: repo.description || 'Nenhuma descrição disponível.',
